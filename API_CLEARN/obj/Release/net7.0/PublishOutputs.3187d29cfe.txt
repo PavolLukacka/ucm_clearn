@@ -1,0 +1,7 @@
+/Users/pavollukacka/Projects/API_CLEARN/API_CLEARN/obj/Release/net7.0/PubTmp/Out/API_CLEARN
+/Users/pavollukacka/Projects/API_CLEARN/API_CLEARN/obj/Release/net7.0/PubTmp/Out/appsettings.Development.json
+/Users/pavollukacka/Projects/API_CLEARN/API_CLEARN/obj/Release/net7.0/PubTmp/Out/appsettings.json
+/Users/pavollukacka/Projects/API_CLEARN/API_CLEARN/obj/Release/net7.0/PubTmp/Out/API_CLEARN.dll
+/Users/pavollukacka/Projects/API_CLEARN/API_CLEARN/obj/Release/net7.0/PubTmp/Out/API_CLEARN.deps.json
+/Users/pavollukacka/Projects/API_CLEARN/API_CLEARN/obj/Release/net7.0/PubTmp/Out/API_CLEARN.runtimeconfig.json
+/Users/pavollukacka/Projects/API_CLEARN/API_CLEARN/obj/Release/net7.0/PubTmp/Out/API_CLEARN.pdb

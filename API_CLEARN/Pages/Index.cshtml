@@ -1,0 +1,122 @@
+﻿@page
+@model IndexModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="utf-8" />
+    <title>Naučte sa programovať v jazyku C s Brainrotem</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #39ff14;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        .tagline {
+            color: #ff4081;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            background-color: #333;
+            color: #fff;
+            border: 2px solid #39ff14;
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #39ff14;
+            color: #121212;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+            button:hover {
+                background-color: #32d12d;
+            }
+
+        #loading {
+            display: none;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #39ff14;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1e1e1e;
+        }
+
+        .error {
+            color: #ff4081;
+            margin-top: 10px;
+        }
+    </style>
+    <script>// Zobrazenie informácie o načítavaní pri odoslaní formulára
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector('form').addEventListener('submit', function () {
+                document.getElementById('loading').style.display = 'block';
+            });
+        });</script>
+</head>
+<body>
+    <h1>Naučte sa programovať v jazyku C</h1>
+    <p class="tagline">Prebuďte v sebe programátora a zapnite svoje mozgové 5G čipy!</p>
+
+    <form method="post">
+        <textarea name="prompt" placeholder="Zadajte otázku o programovaní v jazyku C..." rows="5"></textarea>
+        <br /><br />
+        <button type="submit">Odoslať</button>
+        <div id="loading">Načítavam, prosím čakajte...</div>
+    </form>
+
+    <!-- Zobrazenie chybových hlásení -->
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="error">
+            <ul>
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            </ul>
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.ChatGptResponse))
+    {
+        <h2>Odpoveď:</h2>
+        <table>
+            <tr>
+                <td>@Html.Raw(Model.ChatGptResponse)</td>
+            </tr>
+        </table>
+    }
+</body>
+</html>
